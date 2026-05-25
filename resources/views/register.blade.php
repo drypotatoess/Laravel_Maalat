@@ -273,9 +273,7 @@
         text-decoration: none;
     }
 
-    .login-link:hover {
-        text-decoration: underline;
-    }
+    
 </style>
 
 @endsection
