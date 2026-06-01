@@ -270,7 +270,7 @@
 
 <body>
 
-    <!-- Overlay (mobile) -->
+    <!-- Overlay  -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <div class="sidebar" id="sidebar">
@@ -300,7 +300,7 @@
 
     <div class="main-content">
         <div class="topbar">
-            <!-- Hamburger (mobile only) -->
+    
             <button class="sidebar-toggle me-2" id="sidebarToggle">
                 <i class="bi bi-list"></i>
             </button>
@@ -367,7 +367,7 @@
             overlay.classList.remove('show');
         });
 
-        // Auto-close sidebar on nav link click (mobile)
+      
         document.querySelectorAll('.sidebar .nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 sidebar.classList.remove('open');
@@ -375,7 +375,7 @@
             });
         });
 
-        // Toast auto-hide
+        // Toast 
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.toast').forEach(t => setTimeout(() => t.classList.remove('show'), 3000));
         });

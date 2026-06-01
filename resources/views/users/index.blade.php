@@ -147,7 +147,7 @@
     </div>
 </div>
 
-<!-- Hidden Delete Form -->
+
 <form id="deleteUserForm" method="POST" style="display:none;">
     @csrf
     @method('DELETE')

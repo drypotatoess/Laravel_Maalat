@@ -363,6 +363,10 @@ body {
     font-size: 12px;
     border-radius: 8px;
 }
+
+.modal .form-label {
+    color: #6c757d;
+}
  
 
 @media (max-width: 768px) {
