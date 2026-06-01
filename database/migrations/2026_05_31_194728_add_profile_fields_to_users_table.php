@@ -12,7 +12,7 @@ return new class extends Migration
             $table->string('gender')->nullable()->after('email');
             $table->string('contact')->nullable()->after('gender');
             $table->string('address')->nullable()->after('contact');
-            $table->string('profile_picture')->nullable()->after('address');
+            $table->longText('profile_picture')->nullable()->after('address');
         });
     }
  

@@ -15,10 +15,10 @@
 
                 <div class="row g-3">
 
-                    {{-- LEFT SIDE - Avatar + Upload --}}
+                    {{-- LEFT SIDE - Upload --}}
                     <div class="col-4 text-center border-end">
                         @if(auth()->user()->profile_picture)
-                        <img src="{{ asset('storage/'.auth()->user()->profile_picture) }}"
+                        <img src="{{ asset('images/'.auth()->user()->profile_picture) }}"
                             alt="Profile Picture"
                             style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #2aacbb;">
                         @else
@@ -79,7 +79,7 @@
 
                         <div class="mt-3">
                             <button type="submit" class="btn btn-primary btn-sm px-4">
-                                 Save Changes
+                                Save Changes
                             </button>
                         </div>
                     </div>
