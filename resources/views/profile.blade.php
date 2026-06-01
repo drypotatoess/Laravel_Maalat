@@ -17,7 +17,7 @@
                 <div class="d-flex align-items-end justify-content-between mb-4">
                     <div class="d-flex align-items-end gap-3">
                         @if(auth()->user()->profile_picture)
-                        <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}"
+                        <img src="{{ asset('storage/'.auth()->user()->profile_picture) }}"
                             alt="Profile Picture"
                             style="width:110px;height:110px;border-radius:50%;object-fit:cover;
                                border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);">
