@@ -226,16 +226,13 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-brand">
             <h5><i class="bi bi-heart-pulse-fill"></i> MedPatient</h5>
-            <p>Patient Management System</p>
         </div>
         <nav class="sidebar-nav">
-            <div class="nav-label">Main</div>
             <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <i class="bi bi-grid-fill"></i> Dashboard
             </a>
-            <div class="nav-label mt-2">Management</div>
             <a href="{{ route('users.index') }}" class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}">
-                <i class="bi bi-people-fill"></i> Users
+                <i class="bi bi-people-fill"></i> Users Management
             </a>
             <a href="{{ route('patients.index') }}" class="nav-link {{ request()->routeIs('patients.*') ? 'active' : '' }}">
                 <i class="bi bi-clipboard2-heart-fill"></i> Patient Records
