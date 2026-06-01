@@ -1,45 +1,45 @@
 @extends('layouts.app')
-
+ 
 @section('title', 'My Profile')
-
+ 
 @section('content')
-
+ 
 <div class="row justify-content-center">
     <div class="col-md-9 col-lg-7">
         <div class="card border-0 shadow-sm overflow-hidden" style="border-radius:16px;">
-
+ 
             {{-- HEADER BANNER --}}
-            <div style="height:120px; background: #d1d5db;"></div>
-
-            <div class="card-body px-4 pb-4" style="margin-top:-65px;">
-
-                {{-- AVATAR + NAME + EDIT BUTTON --}}
-                <div class="d-flex align-items-end justify-content-between mb-4">
-                    <div class="d-flex align-items-end gap-3">
-                        @if(auth()->user()->profile_picture)
-                        <img src="{{ asset('storage/'.auth()->user()->profile_picture) }}"
-                            alt="Profile Picture"
-                            style="width:110px;height:110px;border-radius:50%;object-fit:cover;
-                               border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);">
-                        @else
-                        <img src="{{ asset('images/default-avatar.png') }}"
-                            alt="Default Avatar"
-                            style="width:110px;height:110px;border-radius:50%;object-fit:cover;
-                               border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);">
-                        @endif
-                        <div class="mb-1">
-                            <div class="fw-semibold" style="font-size:16px;">{{ auth()->user()->name }}</div>
-                            <div class="text-muted" style="font-size:13px;">{{ auth()->user()->email }}</div>
-                        </div>
-                    </div>
-                    <button type="submit" form="profileForm" class="btn btn-primary btn-sm px-4" style="border-radius:8px;">
-                        <i class="bi bi-check-lg me-1"></i> Save
-                    </button>
-                </div>
-
+            <div style="height:120px; background: linear-gradient(135deg, #2aacbb, #1a3c40);"></div>
+ 
+            <div class="card-body px-4 pb-4" style="margin-top:-55px;">
+ 
                 <form id="profileForm" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
+ 
+                    {{-- AVATAR + NAME + SAVE BUTTON --}}
+                    <div class="d-flex align-items-end justify-content-between mb-4">
+                        <div class="d-flex align-items-end gap-3">
+                            @if(auth()->user()->profile_picture)
+                                <img src="{{ asset('storage/'.auth()->user()->profile_picture) }}"
+                                    alt="Profile Picture"
+                                    style="width:110px;height:110px;border-radius:50%;object-fit:cover;
+                                           border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+                            @else
+                                <img src="{{ asset('images/default-avatar.png') }}"
+                                    alt="Default Avatar"
+                                    style="width:110px;height:110px;border-radius:50%;object-fit:cover;
+                                           border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+                            @endif
+                            <div class="mb-1">
+                                <div class="fw-semibold" style="font-size:16px;">{{ auth()->user()->name }}</div>
+                                <div class="text-muted" style="font-size:13px;">{{ auth()->user()->email }}</div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm px-4" style="border-radius:8px;">
+                            <i class="bi bi-check-lg me-1"></i> Save
+                        </button>
+                    </div>
+ 
                     {{-- PROFILE PICTURE UPLOAD --}}
                     <div class="mb-3">
                         <label class="form-label" style="font-size:11px;color:#6c757d;font-weight:500;">Profile Picture</label>
@@ -47,7 +47,7 @@
                             style="border-color:#e5e7eb;font-size:12px;border-radius:8px;padding:4px 8px;">
                         <div style="font-size:10px;color:#adb5bd;margin-top:3px;">Upload JPG or PNG (max 2MB)</div>
                     </div>
-
+ 
                     {{-- FIELDS --}}
                     <div class="row g-2">
                         <div class="col-md-6">
@@ -86,11 +86,24 @@
                                 style="border-color:#e5e7eb;font-size:12px;border-radius:8px;">
                         </div>
                     </div>
-
+ 
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+ 
 @endsection
+ 
+
+
+
+
+
+
+
+
+
+
+
+
