@@ -29,7 +29,7 @@
                     <td>
                         <div class="d-flex align-items-center gap-2">
                             @if($user->profile_picture)
-                            <img src="{{ asset('storage/' . $user->profile_picture) }}"
+                            <img src="{{ asset('images/profiles/' . $user->profile_picture) }}"
                                 alt="{{ $user->name }}"
                                 class="rounded-circle object-fit-cover"
                                 style="width:36px; height:36px;">
