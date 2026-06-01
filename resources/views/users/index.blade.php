@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
+ 
 @section('title', 'Users')
-
+ 
 @section('content')
 <div class="d-flex align-items-center justify-content-between mb-4">
     <h5 class="fw-semibold mb-0">Users</h5>
@@ -9,7 +9,7 @@
         <i class="bi bi-plus-lg me-1"></i> Add User
     </button>
 </div>
-
+ 
 <div class="card">
     <div class="card-body p-0">
         <table class="table table-hover mb-0 align-middle">
@@ -29,15 +29,15 @@
                     <td>
                         <div class="d-flex align-items-center gap-2">
                             @if($user->profile_picture)
-                            <img src="{{ asset('storage/' . $user->profile_picture) }}"
-                                alt="{{ $user->name }}"
-                                class="rounded-circle object-fit-cover"
-                                style="width:36px; height:36px;">
+                                <img src="{{ asset('storage/' . $user->profile_picture) }}"
+                                    alt="{{ $user->name }}"
+                                    class="rounded-circle object-fit-cover"
+                                    style="width:36px; height:36px;">
                             @else
-                            <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white fw-semibold"
-                                style="width:36px; height:36px; font-size:14px;">
-                                {{ strtoupper(substr($user->name, 0, 1)) }}
-                            </div>
+                                <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white fw-semibold"
+                                    style="width:36px; height:36px; font-size:14px;">
+                                    {{ strtoupper(substr($user->name, 0, 1)) }}
+                                </div>
                             @endif
                             {{ $user->name }}
                         </div>
@@ -72,7 +72,7 @@
         </table>
     </div>
 </div>
-
+ 
 <!-- ADD USER MODAL -->
 <div class="modal fade" id="addUserModal" tabindex="-1">
     <div class="modal-dialog">
@@ -105,7 +105,7 @@
         </div>
     </div>
 </div>
-
+ 
 <!-- EDIT USER MODAL -->
 <div class="modal fade" id="editUserModal" tabindex="-1">
     <div class="modal-dialog">
@@ -160,28 +160,28 @@
         </div>
     </div>
 </div>
-
+ 
 <!-- Hidden Delete Form -->
 <form id="deleteUserForm" method="POST" style="display:none;">
     @csrf
     @method('DELETE')
 </form>
-
+ 
 @endsection
-
+ 
 @push('scripts')
 <script>
     function confirmDelete(actionUrl) {
         document.getElementById('deleteUserForm').action = actionUrl;
         new bootstrap.Modal(document.getElementById('deleteUserModal')).show();
     }
-
-    document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+ 
+    document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
         document.getElementById('deleteUserForm').submit();
     });
-
+ 
     const editUserModal = document.getElementById('editUserModal');
-    editUserModal.addEventListener('show.bs.modal', function(e) {
+    editUserModal.addEventListener('show.bs.modal', function (e) {
         const btn = e.relatedTarget;
         document.getElementById('editName').value = btn.getAttribute('data-name');
         document.getElementById('editEmail').value = btn.getAttribute('data-email');
