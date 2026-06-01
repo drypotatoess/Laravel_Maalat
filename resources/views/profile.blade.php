@@ -18,7 +18,7 @@
                     {{-- LEFT SIDE - Upload --}}
                     <div class="col-4 text-center border-end">
                         @if(auth()->user()->profile_picture)
-                        <img src="{{ asset('images/'.auth()->user()->profile_picture) }}"
+                        <img src="{{ asset('images/profiles/' . auth()->user()->profile_picture) }}"
                             alt="Profile Picture"
                             style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #2aacbb;">
                         @else
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label mb-1" style="font-size:12px;color:#6c757d">New Password
-                                    <span style="color:#adb5bd;font-weight:400"></span>
+                                    <span style="color:#adb5bd;font-weight:400">(leave blank to keep current)</span>
                                 </label>
                                 <input type="password" name="password" class="form-control" style="font-size:13px;padding:5px 10px;">
                             </div>

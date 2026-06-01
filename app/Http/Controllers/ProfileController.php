@@ -33,9 +33,10 @@ class ProfileController extends Controller
         }
 
         if ($request->hasFile('profile_picture')) {
-            $file = $request->file('profile_picture');
-            $base64 = 'data:' . $file->getMimeType() . ';base64,' . base64_encode(file_get_contents($file));
-            $user->profile_picture = $base64;
+            $file      = $request->file('profile_picture');
+            $filename  = time() . '_' . $user->id . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('images/profiles'), $filename);
+            $user->profile_picture = $filename;
         }
 
         $user->save();
