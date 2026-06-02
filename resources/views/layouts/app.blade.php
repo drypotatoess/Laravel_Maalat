@@ -218,7 +218,7 @@
             background: #ff6b6b22 !important;
         }
 
-        /* Sidebar overlay for mobile */
+        
         .sidebar-overlay {
             display: none;
             position: fixed;
@@ -231,7 +231,7 @@
             display: block;
         }
 
-        /* Mobile toggle button */
+        
         .sidebar-toggle {
             display: none;
             background: none;

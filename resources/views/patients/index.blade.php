@@ -1,7 +1,7 @@
 @extends('layouts.app')
- 
+
 @section('title', 'Patient Records')
- 
+
 @section('content')
 <div class="d-flex align-items-center justify-content-between mb-4">
     <h5 class="fw-semibold mb-0">Patient Records</h5>
@@ -9,7 +9,7 @@
         <i class="bi bi-plus-lg me-1"></i> Add Patient
     </button>
 </div>
- 
+
 <div class="card">
     <div class="card-body p-0">
         <table class="table table-hover mb-0 align-middle">
@@ -40,11 +40,11 @@
                     <td>{{ \Carbon\Carbon::parse($patient->date_of_visit)->format('M d, Y') }}</td>
                     <td>
                         @if($patient->status == 'Admitted')
-                            <span class="badge bg-danger">Admitted</span>
+                        <span class="badge bg-danger">Admitted</span>
                         @elseif($patient->status == 'Outpatient')
-                            <span class="badge bg-warning text-dark">Outpatient</span>
+                        <span class="badge bg-warning text-dark">Outpatient</span>
                         @else
-                            <span class="badge bg-success">Discharged</span>
+                        <span class="badge bg-success">Discharged</span>
                         @endif
                     </td>
                     <td class="text-end">
@@ -83,7 +83,7 @@
         </table>
     </div>
 </div>
- 
+
 <!-- ADD PATIENT MODAL -->
 <div class="modal fade" id="addPatientModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
@@ -116,10 +116,14 @@
                             <label class="form-label" style="font-size:13px">Blood Type</label>
                             <select name="blood_type" class="form-select">
                                 <option value="">Select</option>
-                                <option>A+</option><option>A-</option>
-                                <option>B+</option><option>B-</option>
-                                <option>O+</option><option>O-</option>
-                                <option>AB+</option><option>AB-</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
                             </select>
                         </div>
                         <div class="col-md-4">
@@ -161,7 +165,7 @@
         </div>
     </div>
 </div>
- 
+
 <!-- EDIT PATIENT MODAL -->
 <div class="modal fade" id="editPatientModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
@@ -194,10 +198,14 @@
                             <label class="form-label" style="font-size:13px">Blood Type</label>
                             <select name="blood_type" id="eBlood" class="form-select">
                                 <option value="">Select</option>
-                                <option>A+</option><option>A-</option>
-                                <option>B+</option><option>B-</option>
-                                <option>O+</option><option>O-</option>
-                                <option>AB+</option><option>AB-</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
                             </select>
                         </div>
                         <div class="col-md-4">
@@ -238,7 +246,7 @@
         </div>
     </div>
 </div>
- 
+
 <!-- DELETE CONFIRMATION MODAL -->
 <div class="modal fade" id="deletePatientModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" style="max-width:380px;">
@@ -264,39 +272,39 @@
         </div>
     </div>
 </div>
- 
+
 <!-- Hidden Delete Form -->
 <form id="deletePatientForm" method="POST" style="display:none;">
     @csrf
     @method('DELETE')
 </form>
- 
+
 @endsection
- 
+
 @push('scripts')
 <script>
     function confirmDeletePatient(actionUrl) {
         document.getElementById('deletePatientForm').action = actionUrl;
         new bootstrap.Modal(document.getElementById('deletePatientModal')).show();
     }
- 
-    document.getElementById('confirmDeletePatientBtn').addEventListener('click', function () {
+
+    document.getElementById('confirmDeletePatientBtn').addEventListener('click', function() {
         document.getElementById('deletePatientForm').submit();
     });
- 
+
     const editPatientModal = document.getElementById('editPatientModal');
-    editPatientModal.addEventListener('show.bs.modal', function (e) {
+    editPatientModal.addEventListener('show.bs.modal', function(e) {
         const btn = e.relatedTarget;
-        document.getElementById('eName').value      = btn.getAttribute('data-name');
-        document.getElementById('eAge').value       = btn.getAttribute('data-age');
-        document.getElementById('eGender').value    = btn.getAttribute('data-gender');
-        document.getElementById('eBlood').value     = btn.getAttribute('data-blood');
-        document.getElementById('eContact').value   = btn.getAttribute('data-contact');
-        document.getElementById('eAddress').value   = btn.getAttribute('data-address');
+        document.getElementById('eName').value = btn.getAttribute('data-name');
+        document.getElementById('eAge').value = btn.getAttribute('data-age');
+        document.getElementById('eGender').value = btn.getAttribute('data-gender');
+        document.getElementById('eBlood').value = btn.getAttribute('data-blood');
+        document.getElementById('eContact').value = btn.getAttribute('data-contact');
+        document.getElementById('eAddress').value = btn.getAttribute('data-address');
         document.getElementById('eDiagnosis').value = btn.getAttribute('data-diagnosis');
-        document.getElementById('eDoctor').value    = btn.getAttribute('data-doctor');
-        document.getElementById('eDate').value      = btn.getAttribute('data-date');
-        document.getElementById('eStatus').value    = btn.getAttribute('data-status');
+        document.getElementById('eDoctor').value = btn.getAttribute('data-doctor');
+        document.getElementById('eDate').value = btn.getAttribute('data-date');
+        document.getElementById('eStatus').value = btn.getAttribute('data-status');
         document.getElementById('editPatientForm').action = '/patients/' + btn.getAttribute('data-id');
     });
 </script>

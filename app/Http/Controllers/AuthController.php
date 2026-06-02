@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Auth;
  
 class AuthController extends Controller
 {
-    // -------------------------
     // REGISTER
-    // -------------------------
- 
     public function showRegister()
     {
         return view('register');
@@ -45,10 +42,8 @@ class AuthController extends Controller
         return redirect()->route('register')->with('success', 'Account registered successfully!');
     }
  
-    // -------------------------
+
     // LOGIN
-    // -------------------------
- 
     public function showLogin()
     {
         return view('login');
@@ -75,10 +70,8 @@ class AuthController extends Controller
         return redirect()->route('login')->with('error', 'Invalid email or password.');
     }
  
-    // -------------------------
     // LOGOUT
-    // -------------------------
- 
+
     public function logout(Request $request)
     {
         Auth::logout();

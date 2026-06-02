@@ -20,7 +20,6 @@
     <!-- NAV ITEMS -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 
-        <!-- NAV LINKS -->
         <ul class="navbar-nav align-items-center">
 
             <li class="nav-item">
@@ -64,10 +63,10 @@
         margin: 0;
     }
 
-    /* FIXED NAVBAR */
+    
     .navbar {
 
-        /* NEW COLOR */
+      
         background-color: #2FA4C8;
 
         padding-top: 12px;
@@ -79,7 +78,6 @@
 
         z-index: 999;
 
-        /* GLASS EFFECT */
         backdrop-filter: blur(6px);
 
     }
